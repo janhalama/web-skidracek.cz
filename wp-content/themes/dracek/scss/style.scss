@@ -1,0 +1,817 @@
+/*
+Theme Name: Ski Dracek
+Theme URI: http://skidracek.cz/themes/skidracek
+Author: Jan Halama
+Description: Ski Dracek theme
+Version: 1.0
+Text Domain: skidracek */
+
+@font-face {
+	font-family: DracekFont;
+	src: url("http://www.skidracek.cz/wp-content/themes/dracek/css/fonts/ufonts.com_amor-sans-pro-bold-opentype.otf") format("opentype");
+}
+
+$font-family:    DracekFont, Tahoma, Geneva, sans-serif;
+$primary-color: #2ca0d0;
+$secondary-color: #ffffff;
+$light-color: #e4f5fc;
+$text-dark-color: #000000;
+$text-light-color: #5A5E60;
+$active-btn-color: #B24450;
+$dimmed-color: #545454;
+$standard-border-radius: 3px;
+
+html, body {
+	border: 0; 
+	margin: 0; 
+	padding: 0;
+}
+
+body {
+	font-family: $font-family;
+	font-weight: normal;
+	position:relative;
+	width:100%;
+    min-width:1100px;
+	height:100%;
+	background:$secondary-color;
+	color:$primary-color;
+	line-height:1em;
+}
+
+iframe{
+	border:0px;
+}
+
+a{
+	color:#098ec8;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+p{
+	font-family: $font-family;
+	color: $text-light-color;
+	padding-top: 20px;
+	line-height: 1.4em;
+	margin: 0; 
+	font-size: 1em; 
+}
+
+p.first-paragraph{
+	padding-top: 0px;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1{
+	font-size:2.5em;
+}
+
+h2{
+	font-size:1.3em;
+}
+
+h3{
+	font-size:1.1em;
+}
+
+table
+{
+	font-family: $font-family;
+	width:100%;
+	border-collapse:collapse;
+}
+
+td, th 
+{
+	font-size:1.0em;
+	border:0px;
+	background-color:$secondary-color;
+	color:$text-light-color;
+	padding:12px 7px 12px 7px;
+}
+
+th 
+{
+	font-size:1.3em;
+	text-align:left;
+	color:$primary-color;
+}
+
+tr.alt td 
+{
+	background-color:$light-color;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin border-radius-top($radius) {
+  -webkit-border-radius: $radius $radius 0 0;
+     -moz-border-radius: $radius $radius 0 0;
+          border-radius: $radius $radius 0 0;
+}
+
+@mixin border-radius-bottom($radius) {
+  -webkit-border-radius: 0 0 $radius $radius;
+     -moz-border-radius: 0 0 $radius $radius;
+          border-radius: 0 0 $radius $radius;
+}
+
+@mixin white-horizontal-gradient()
+{
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 1%, rgba(255,255,255,0.84) 17%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(255,255,255,1)), color-stop(17%,rgba(255,255,255,0.84)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 1%,rgba(255,255,255,0.84) 17%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 1%,rgba(255,255,255,0.84) 17%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 1%,rgba(255,255,255,0.84) 17%,rgba(255,255,255,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 1%,rgba(255,255,255,0.84) 17%,rgba(255,255,255,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+
+.section:after, .section-body:after, .wrap_section:after{
+	clear: both;
+}
+.sectionp:before, .section:after, .section-body:after, .section-body:before, .wrap_section:after, .wrap_section:before{
+	content: "";                                                                                                                     
+	display: table;                                                                                         
+}
+
+/*section*/    
+.section{
+	margin:0px;
+	width:100%;
+	min-height:757px;
+	float:left;
+}
+
+/*menu*/
+.nav-container{  position: fixed; margin: 0 0;  text-align: center; width: 1200px;}
+    .f-nav{ z-index: 9999; position: fixed; margin: 0 0; text-align: center;  width: 1200px;} /* this make our menu fixed top */
+    
+.menu { background: no-repeat center bottom; height: 64px; width: 987px;}    
+.navigace { padding: 4px 0;background: $primary-color repeat top left; height: 53px; width: 1125px; margin-left:40px;}
+    .navigace ul { max-width:1200px;  padding: 0; margin: 15px 0 0 0;}
+    .navigace ul li{float: left; list-style: none; height: 30px; margin: 0 3px 0 3px; padding: 0;}
+
+    .navigace ul li a{font-size: 18px; float: left; text-align:center; color: $secondary-color; padding: 5px 15px 5px 15px; text-decoration: none;}
+        .navigace ul li a:hover 
+		{
+			text-decoration: none; 
+			background-color:$active-btn-color;
+			@include border-radius($standard-border-radius);
+		}
+		.navigace ul li:first-child{ padding-left: 0;}
+
+.section-body{
+	min-width:990px;
+	max-width:990px;
+	margin: 0 auto;/* center the page in Firefox */
+	position:relative;
+}
+
+#sd-id-section-footer-links .links-container{
+text-align:center;
+width: 990px;
+margin: 0 0;
+}
+
+.social-links
+{
+	text-align:center;
+	width:100%;
+}
+
+.social-links a:hover{
+	color:$primary-color !important;
+}
+
+.social-links a {
+	color:$dimmed-color !important;
+}
+
+
+.links ul
+{
+	max-width:990px;  padding: 0; margin: 70px 0 0 0;
+}
+
+	.links ul li
+	{
+		font-size: 18px; 
+		float: left; 
+		text-align:center; 
+		color: $dimmed-color; 
+		text-decoration: none;
+		list-style: none;
+		margin: 10px 0 0 0
+	}
+		.links ul li div
+		{
+			display: block;
+			width: 990px;
+		}
+		.links ul li a 
+		{
+			text-decoration: none; 
+			color:$primary-color;
+		}
+		.links ul li a:hover
+		{
+			text-decoration: none; 
+		}
+
+#sd-id-section-menu {
+  z-index:99;
+  position:fixed;
+  background: $primary-color no-repeat center bottom;
+  color: $secondary-color;
+  min-height: 63px;
+  top: 0;
+}
+
+#sd-id-section-menu-placeholder {
+  background: $primary-color no-repeat center bottom;
+  color: $secondary-color;
+  min-height: 64px;
+  top:0px;
+}
+
+#sd-id-section-footer-menu{
+background: $primary-color no-repeat bottom center;
+min-height:63px;
+}
+
+#sd-id-section-footer-links{
+background: $secondary-color no-repeat bottom center;
+min-height:189px;
+}
+
+#sd-id-section-upper-image{
+background: url("./images/children_and_ski.jpg") $secondary-color no-repeat top center;
+background-size: cover;
+opacity: 0.8;
+transition: opacity 1s ease-in-out;
+-moz-transition: opacity 1s ease-in-out;
+-webkit-transition: opacity 1s ease-in-out;
+mi-height:644px;
+padding: 0 0;
+margin: 0 0;
+line-height: 0em;
+}
+
+.section-header
+{
+	min-height:90px;
+	text-align:center;
+}
+
+.section-handle {
+	background-color: transparent;
+    height: 62px;
+    position: absolute;
+    top: -62px;
+    width: 100%;
+    z-index: -1;
+}
+
+.primary-section-header{
+	background: $primary-color no-repeat center bottom;
+	color: $secondary-color;
+	line-height:1.4em;
+}
+
+.secondary-section-header{
+	background: $light-color no-repeat center bottom;
+	color: $primary-color;
+	line-height:1.4em;
+}
+
+#sd-id-section-actions-header{
+}
+
+#sd-id-section-actions-body{
+background: $secondary-color no-repeat center bottom;
+color: $primary-color;
+min-height:250px;
+text-align:center;
+}
+
+#sd-id-section-opening-hours-body{
+background: $secondary-color no-repeat center bottom;
+color: $primary-color;
+min-height:50px;
+text-align:center;
+margin-top:15px;
+}
+
+#sd-id-section-parameters-header{
+}
+
+#sd-id-section-parameters-body{
+background: $secondary-color no-repeat center bottom;
+color: $primary-color;
+min-height:260px;
+text-align:center;
+}
+
+#sd-id-section-parameters-footer{
+background: url("./images/maskarak.jpg") $secondary-color no-repeat center bottom;
+background-size:cover;
+color: $primary-color;
+min-height:644px;
+text-align:center;
+}
+
+#sd-id-section-parameters-footer .gradient-box{
+@include white-horizontal-gradient();
+z-index:10;
+width:100%;
+height:200px;
+}
+
+#sd-id-claim-box
+{
+	padding: 0 0;
+	margin: -757px 0 0;
+}
+
+#sd-id-claim-box .logo{
+	background: url("./images/logo.png") $secondary-color no-repeat bottom center;
+	width:198px;
+	height:198px;
+	background-color:transparent;
+	padding:0 0 0 0;
+	position:absolute;
+	left:396px;
+	top:384px;
+	z-index:50;
+}
+
+#sd-id-claim-box .white-box { 
+    background-color: white;
+	@include border-radius($standard-border-radius);	
+    height: 195px;
+    left: 195px;
+    padding: 0;
+    position: absolute;
+    top: 525px;
+    width: 600px;
+    z-index: 48;
+	font-size: 1.2em;
+	line-height: 1.1em;
+}
+
+#sd-id-claim-box .temperature{
+	left: 3px;
+    line-height: 2em;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    width: 220px;
+}
+#sd-id-claim-box .snow{
+	left: 390px;
+    line-height: 2em;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    width: 200px;
+}
+#sd-id-claim-box .open-hours{
+	position:absolute;
+	top: 145px;
+	width: 100%;
+	text-align:center;
+}
+
+#sd-id-claim-box .open-hours .closed{
+	color:red;
+}
+
+#sd-id-claim-box .open-hours .open{
+	color:green;
+}
+
+
+#sd-id-claim-box .blue-box {
+    background-color: $primary-color;
+	@include border-radius($standard-border-radius);
+    color: $secondary-color;
+    font-size: 1.7em;
+    height: 80px;
+    left: 145px;
+    line-height: 3.1em;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 578px;
+    width: 700px;
+    z-index: 49;
+}
+
+.primary-btn {
+    background-color: $secondary-color;
+	@include border-radius($standard-border-radius);
+	color: $primary-color;	
+	font-size: 1.1em;
+	height: 35px;
+    text-align: center;
+    line-height: 1.9em;
+}
+
+.primary-btn:hover{
+    background-color: $active-btn-color;
+    color: $secondary-color;
+}
+
+.primary-btn a {
+	text-decoration: none;
+}
+
+.secondary-btn {
+    background-color: $active-btn-color;
+	@include border-radius($standard-border-radius);
+	color: $secondary-color;	
+	font-size: 1.1em;
+	height: 35px;
+    text-align: center;
+    line-height: 1.9em;
+}
+
+.secondary-btn:hover{
+    background-color: $secondary-color;
+    color: $primary-color;
+}
+
+.secondary-btn a {
+	text-decoration: none;
+}
+
+#sd-id-claim-box .primary-btn {
+    left: 67%;
+    padding: 0;
+    position: fixed;
+    top: 65px;
+    width: 200px;
+    z-index: 99;
+}
+
+#sd-id-section-actions-header .secondary-btn {
+    left: 735px;
+    padding: 0;
+    position: absolute;
+    top: 40px;
+    width: 200px;
+    z-index: 50;
+}
+
+#sd-id-section-actions-body .action-box {
+    padding: 0;
+	margin: 0 auto;
+    position: relative;
+    top: 20px;
+	height: 200px;
+    width: 400px;
+	
+}
+
+#sd-id-section-actions-body .action-box .calendar
+{
+    position: absolute;
+	left: 10px;
+	top: 40px;
+	width:120px;
+	height:120px;
+	background: url('./images/calendar.png') $secondary-color no-repeat center bottom;
+}
+
+#sd-id-section-actions-body .action-box .day
+{
+	position: absolute;
+	left: 20px;
+	top: 80px;
+	width: 100px;
+	height: 70px;
+	text-align: center;
+	line-height: 1.7em;
+	font-size: 2.8em;
+}
+
+#sd-id-section-actions-body .action-box .month
+{
+	position: absolute;
+	left: 10px;
+	top: 162px;
+	width: 120px;
+	height: 60px;
+	text-align: center;
+	line-height: 1em;
+	font-size: 2em;
+}
+#sd-id-section-actions-body .action-box .header
+{
+	position: absolute;
+	left: 140px;
+	top: 60px;
+	width: 320px;
+	height: 40px;
+	text-align: left;
+	line-height: 1em;
+	font-size: 2em;
+}
+#sd-id-section-actions-body .action-box .text
+{
+	position: absolute;
+	left: 140px;
+	top: 100px;
+	width: 320px;
+	height: 100px;
+	text-align: left;
+	line-height: 1em;
+	font-size: 1em;
+	color: $text-light-color;
+}
+
+#sd-id-section-parameters-body .parameter-box {
+	width:20%;
+	height:100%;
+	position:relative;
+	float: left;
+}
+
+#sd-id-section-parameters-body .parameter-box .header {
+	width:100%;
+	padding-top:20px;
+	height:20px;
+	font-size: 1.2em;
+	color:$primary-color;
+}
+#sd-id-section-parameters-body .parameter-box .value {
+	width:100%;
+	font-size: 3em;
+    padding-bottom: 20px;
+    padding-top: 35px;
+	height:20x;
+	font-size: 3.0em;
+	color:$text-light-color;
+}
+#sd-id-section-parameters-body .parameter-box .unit {
+	width:100%;
+	height:20x;
+	font-size: 1.8em;
+    padding-bottom: 15px;
+	color:$text-light-color;
+}
+#sd-id-section-parameters-body .parameter-box .icon {
+	width:100%;
+	height:80px;
+	font-size: 6em;
+	color:$primary-color;
+}
+
+#sd-id-section-skischool-body{
+background: $secondary-color no-repeat center bottom;
+color: $primary-color;
+min-height:180px;
+text-align:left;
+}
+
+#sd-id-box-skischool-middle.third-box{
+	width:30%;
+}
+
+.third-box{
+	width:30%;
+	height:100%;
+	position:relative;
+	float: left;
+	padding-right: 4%;
+}
+
+.third-box.first-box{
+	padding-left: 60px;
+}
+
+.third-box.last-box{
+    width:25%;
+	padding-right: 0px;
+}
+
+.third-box h2{
+	line-height: 0;
+    padding-top: 30px;
+	color:$primary-color;
+}
+
+#sd-id-section-skischool-body .secondary-btn {
+    left: 60px;
+    padding: 0;
+    position: absolute;
+    top: 240px;
+    width: 200px;
+    z-index: 50;
+}
+
+#sd-id-section-skischool-body .secondary-btn:hover{
+    background-color: $primary-color;
+    color: $secondary-color;
+}
+
+#sd-id-school-license
+{
+    position: absolute;
+	left: 60px;
+	top: 30px;
+	width:254px;
+	height:177px;
+	background: url('./images/license.jpg') $secondary-color no-repeat center bottom;
+}
+
+#sd-id-section-pricelist-body{
+	min-height: 250px;
+}
+
+#sd-id-section-pricelist-body table{
+	margin-top: 40px;
+	margin-left: 8px;
+}
+
+#sd-id-section-pricelist-body td{
+	width: 45%;
+}
+
+#sd-id-section-pricelist-body td.last{
+	width: 10%;
+}
+
+#sd-id-section-navigation-google-map {
+  min-height: 350px;
+}
+
+#sd-id-section-navigation-body {
+  min-height: 350px;
+}
+
+#sd-id-section-navigation-body .secondary-btn {
+	padding: 0;
+	position: absolute;
+	width: 300px;
+	z-index: 50;
+}
+#sd-id-section-navigation-body .secondary-btn:hover {
+  background-color: #2ca0d0;
+  color: #fff;
+}
+
+#sd-id-navigation-car  .secondary-btn{
+    left: 60px;
+    top: 250px;
+}
+
+#sd-id-navigation-bus .secondary-btn{
+  left: 0px;
+}
+
+#sd-id-navigation-bus-btn-jn .secondary-btn{
+  top: 140px;
+}
+
+#sd-id-navigation-bus-btn-zb .secondary-btn{
+  top: 190px;
+}
+
+#sd-id-section-gallery-header .secondary-btn {
+    left: 735px;
+    padding: 0;
+    position: absolute;
+    top: 26px;
+    width: 200px;
+    z-index: 50;
+}
+
+#sd-id-section-gallery-header .secondary-btn:hover {
+  background-color: #2ca0d0;
+  color: #fff;
+}
+
+
+#sd-id-section-gallery-body{
+	background: url("./images/gallery.jpg") $secondary-color no-repeat center bottom;
+	background-size:cover;
+	color: $primary-color;
+	min-height:644px;
+	text-align:center;
+}
+
+#sd-id-section-contacts-body{
+	min-height: 150px;
+}
+
+#sd-id-section-contacts-body .secondary-btn {
+	padding: 0;
+	position: absolute;
+	width: 200px;
+	z-index: 50;
+	top: 80px;
+}
+#sd-id-section-contacts-body .secondary-btn:hover {
+  background-color: #2ca0d0;
+  color: #fff;
+}
+
+#sd-id-modal-inquiry-skischool.reveal-modal{
+  height: 750px;
+  min-width: 700px;
+  padding: 0 3px;
+}
+
+#sd-id-modal-ask-question.reveal-modal{
+  height: 715px;
+  min-width: 700px;
+  padding: 0 3px;  
+}
+
+#sd-id-modal-webcamera.reveal-modal{
+  height: 770px; 
+  width: 1280px;
+  padding: 0;
+  margin-left: -640px;
+}
+
+#sd-id-camera-image-stream-header{
+	text-align:left;
+	background-color: $primary-color;
+	color: $secondary-color;
+	width:100%;
+	height: 50px;
+    line-height: 3.5em;
+	@include border-radius-top($standard-border-radius);
+}
+
+#sd-id-camera-image-stream-header h3{
+	padding: 0 1em 0;
+	margin: 0;
+}
+
+#sd-id-camera-image-stream-header .secondary-btn{
+    padding: 0;
+    top: 8px;
+    width: 195px;
+    z-index: 1000;
+	position: relative;
+    float: right;
+}
+
+#sd-id-camera-image-stream-header .close-reveal-modal{
+	color:$secondary-color;
+}
+
+#sd-id-camera-image-stream-header a.close-reveal-modal:hover{
+	color:$active-btn-color;
+}
+
+
+#sd-id-camera-image-stream-container{
+	width:100%;
+	height:100%;
+	position:relative;
+	@include border-radius-bottom($standard-border-radius);
+}
+
+#sd-id-modal-webcamera .video-history-bar iframe {
+	max-width: 1600px !important;
+}
+
+
+.reveal-modal .close-reveal-modal{ /*reveal close button override*/
+	color:$primary-color;
+	font-size: 1.2em;
+	float:right;
+	z-index:200;
+	right: 8px;
+    top: 8px;	
+}
+
+a.close-reveal-modal:hover{
+	color:$active-btn-color;
+}
+
+.gmp_map_opts { /*Google map margin override*/
+  margin: 0px !important;
+}
+
+.reveal-modal { /*reveal popup overide*/
+  @include border-radius($standard-border-radius);
+}
+
