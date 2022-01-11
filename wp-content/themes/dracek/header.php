@@ -43,10 +43,6 @@
 <script type="text/javascript" src="/wp-content/themes/dracek/js/jquery.reveal.js"></script>
 <script type="text/javascript" src="/wp-content/themes/dracek/js/temperature.js"></script>
 <script>
-window.onload = function () {
-};
-</script>
-<script>
 $(function() {
 			$('ul.nav a').bind('click',function(event){
 				var $anchor = $(this);
