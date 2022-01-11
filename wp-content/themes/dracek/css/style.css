@@ -7,9 +7,11 @@
  Text Domain: skidracek */
 @font-face {
   font-family: DracekFont;
-  src: url("http://www.skidracek.cz/wp-content/themes/dracek/css/fonts/ufonts.com_amor-sans-pro-bold-opentype.otf") format("opentype");
+  src: url("http://www.skidracek.cz/wp-content/themes/dracek/css/fonts/ufonts.com_amor-sans-pro-bold-opentype.otf")
+    format("opentype");
 }
-html, body {
+html,
+body {
   border: 0;
   margin: 0;
   padding: 0;
@@ -46,7 +48,9 @@ p {
 p.first-paragraph {
   padding-top: 0px;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: normal;
 }
 h1 {
@@ -63,7 +67,8 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
-td, th {
+td,
+th {
   font-size: 1em;
   border: 0px;
   background-color: #fff;
@@ -78,10 +83,17 @@ th {
 tr.alt td {
   background-color: #e4f5fc;
 }
-.section:after, .section-body:after, .wrap_section:after {
+.section:after,
+.section-body:after,
+.wrap_section:after {
   clear: both;
 }
-.sectionp:before, .section:after, .section-body:after, .section-body:before, .wrap_section:after, .wrap_section:before {
+.sectionp:before,
+.section:after,
+.section-body:after,
+.section-body:before,
+.wrap_section:after,
+.wrap_section:before {
   content: "";
   display: table;
 }
@@ -279,17 +291,49 @@ tr.alt td {
   text-align: center;
 }
 #sd-id-section-parameters-footer .gradient-box {
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 1%, rgba(255, 255, 255, 0.84) 17%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 1%,
+    rgba(255, 255, 255, 0.84) 17%,
+    rgba(255, 255, 255, 0) 100%
+  );
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, rgba(255, 255, 255, 1)), color-stop(17%, rgba(255, 255, 255, 0.84)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(1%, rgba(255, 255, 255, 1)),
+    color-stop(17%, rgba(255, 255, 255, 0.84)),
+    color-stop(100%, rgba(255, 255, 255, 0))
+  );
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 1%, rgba(255, 255, 255, 0.84) 17%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 1%,
+    rgba(255, 255, 255, 0.84) 17%,
+    rgba(255, 255, 255, 0) 100%
+  );
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 1%, rgba(255, 255, 255, 0.84) 17%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 1%,
+    rgba(255, 255, 255, 0.84) 17%,
+    rgba(255, 255, 255, 0) 100%
+  );
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 1%, rgba(255, 255, 255, 0.84) 17%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 1%,
+    rgba(255, 255, 255, 0.84) 17%,
+    rgba(255, 255, 255, 0) 100%
+  );
   /* IE10+ */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 1%, rgba(255, 255, 255, 0.84) 17%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 1%,
+    rgba(255, 255, 255, 0.84) 17%,
+    rgba(255, 255, 255, 0) 100%
+  );
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0);
   /* IE6-9 */
@@ -438,7 +482,7 @@ tr.alt td {
   top: 40px;
   width: 120px;
   height: 120px;
-  background: url('./images/calendar.png') #fff no-repeat center bottom;
+  background: url("./images/calendar.png") #fff no-repeat center bottom;
 }
 #sd-id-section-actions-body .action-box .day {
   position: absolute;
@@ -562,7 +606,7 @@ tr.alt td {
   top: 30px;
   width: 254px;
   height: 177px;
-  background: url('./images/license.jpg') #fff no-repeat center bottom;
+  background: url("./images/new-license.jpg") #fff no-repeat center bottom;
 }
 #sd-id-section-pricelist-body {
   min-height: 250px;
